@@ -1,8 +1,7 @@
 # Before executing
 1. Customize your preferences on "terraform.tfvars & variables.tf file" for your EKS Cluster environment.
-2. Customize your preferences on "k8s-rancher.tf file" for your Rancher environment.
-3. Set kubeconfig path in variable kubeconfig_path on "terraform.tfvars file". After this, run export "KUBE_CONFIG_PATH=" to the destination.
-4. Set your AWS Keys in providers.tf file and ".aws/credentils" in your user home.
+2. Set kubeconfig path in variable kubeconfig_path on "terraform.tfvars file". After this, run export "KUBE_CONFIG_PATH=" to the destination.
+3. Set your AWS Keys in providers.tf file and ".aws/credentils" in your user home.
 
 # Execution
 1. Run on terminal: terraform init ; sleep 3 ; terraform plan ; terraform apply
@@ -12,4 +11,4 @@
 
 # Destroy
 1. Run on terminal: terraform destroy -auto-approve
-##### NOTE: For Network issues, before terraform deletes EKS cluster, if the internet gateway and subnets are not removed within 8 minutes, manually remove LB and SG ELB on AWS Console or AWS CLI.
+##### NOTE: If you have issues on destroy the cluster, please check your custom application resources via AWS CLI and/or AWS UI. Some of this files are not managed by terraform.
